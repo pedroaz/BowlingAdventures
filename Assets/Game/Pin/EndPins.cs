@@ -7,12 +7,14 @@ public class EndPins : MonoBehaviour {
     public LayerMask ballLayerMask;
     public List<Rigidbody> listOfPints;
 
-    public EndSceneManager endSceneManager;
+    EndSceneManager endSceneManager;
 
     // Use this for initialization
     void Start () {
-		
-	}
+
+        endSceneManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<EndSceneManager>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -12,8 +12,9 @@ public class LevelManager : MonoBehaviour {
     public static int currentPoints;
 
     private void Awake() {
-        
-        if(selectedLevel == null) {
+
+        if (selectedLevel == null) {
+            print("NO LEVEL. USING DEFAULT");
             selectedLevel = defaultLevel;
         }
 
@@ -24,6 +25,7 @@ public class LevelManager : MonoBehaviour {
 
         currentPoints = 0;
         playerIsAlive = true;
+        Instantiate(selectedLevel.levelPrefab);
     }
 
 

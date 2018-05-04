@@ -30,6 +30,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
   m_IsActive: 1
+--- !u!1 &1747383943453866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4602844635475370}
+  - component: {fileID: 65752636788270880}
+  - component: {fileID: 114803382065261128}
+  m_Layer: 10
+  m_Name: HitCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4559338164915244
 Transform:
   m_ObjectHideFlags: 1
@@ -37,10 +54,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698575084242670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -1.5, z: 31.5}
+  m_LocalPosition: {x: -1.5, y: -1.5, z: 33}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4602844635475370}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4602844635475370
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747383943453866}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: -1}
+  m_LocalScale: {x: 1, y: 4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4559338164915244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23735467365482626
@@ -99,6 +130,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!65 &65752636788270880
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747383943453866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9, y: 0.49, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114083203398317238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,3 +421,17 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114803382065261128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747383943453866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d9e380c05104a4fad7b05fab563ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballLayerMask:
+    serializedVersion: 2
+    m_Bits: 512

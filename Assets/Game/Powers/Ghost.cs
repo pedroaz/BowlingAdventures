@@ -29,17 +29,22 @@ public class Ghost : MonoBehaviour {
 
     public void ActivateGhost() {
 
-        if (!isGhost && !SlowTime.isSlow) {
+        if (PowersManager.redPower >= 1) {
 
-            isGhost = true;
+            if (!isGhost && !SlowTime.isSlow) {
 
-            currentDuration = maxDuration;
+                isGhost = true;
 
-            // Ghost
-            ball.layer = 11;
+                PowersManager.RemoveRed();
+
+                currentDuration = maxDuration;
+
+                // Ghost
+                ball.layer = 11;
 
 
-            StartCoroutine(Duration());
+                StartCoroutine(Duration());
+            }
         }
 
     }

@@ -15,7 +15,7 @@ public class PowersManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        redPower = 0;
+        redPower = 2;
         purplePower = 1f;
         redDuration = 0;
         PowerEvent();
@@ -25,6 +25,12 @@ public class PowersManager : MonoBehaviour {
 
         redPower++;
         PowerEvent();
+    }
+
+    static public void RemoveRed() {
+        if(redPower > 1) {
+            redPower--;
+        }
     }
 
     static public void AddPurple() {
@@ -48,6 +54,4 @@ public class PowersManager : MonoBehaviour {
         }
         PowerEvent();
     }
-
-
 }

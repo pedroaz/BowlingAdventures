@@ -80,7 +80,9 @@
     <Compile Include="Assets\Game\UI\UIManager.cs" />
     <Compile Include="Assets\Helpers\SceneTransitionHelper.cs" />
     <Compile Include="Assets\Menus\EndGame\EndGameManager.cs" />
-    <Compile Include="Assets\Menus\SelectLevelMenu\LevelSelecter.cs" />
+    <Compile Include="Assets\Menus\SelectLevelMenu\LevelBox.cs" />
+    <Compile Include="Assets\Menus\SelectLevelMenu\Universe.cs" />
+    <Compile Include="Assets\Menus\SelectLevelMenu\World.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Constant.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Enum.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_IconUtility.cs" />

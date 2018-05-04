@@ -19,13 +19,18 @@ public class SlowTime : MonoBehaviour {
 	
     public void ActivateSlow() {
 
-        if (!isSlow && !Ghost.isGhost) {
+        if(PowersManager.redPower >= 1) {
 
-            isSlow = true;
+            if (!isSlow && !Ghost.isGhost) {
 
-            currentDuration = maxDuration;
-            
-            StartCoroutine(Duration());
+                PowersManager.RemoveRed();
+
+                isSlow = true;
+
+                currentDuration = maxDuration;
+                Time.timeScale = 0.3f;
+                StartCoroutine(Duration());
+            }
         }
 
         
