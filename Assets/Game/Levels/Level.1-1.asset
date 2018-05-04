@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55852ff3d6a5db43be73a971e0fe5f6, type: 3}
   m_Name: Level.1-1
   m_EditorClassIdentifier: 
-  pointsRequired: 10
-  maxRounds: 2
+  maxPoints: 10
+  levelPrefab: {fileID: 0}

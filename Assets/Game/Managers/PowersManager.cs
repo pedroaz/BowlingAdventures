@@ -4,28 +4,50 @@ using UnityEngine;
 
 public class PowersManager : MonoBehaviour {
 
-    public GameObject manaGameObject;
-    public GameObject powersGameObject;
+    static public float purplePower;
+    static public int redPower;
+    static public float redDuration;
+
+    public delegate void PowerDelegate();
+    public static event PowerDelegate PowerEvent;
+    public SlowTime slowTime;
 
 	// Use this for initialization
 	void Start () {
 
-        BallThrowMovement.ThrowEvent += ShowPowers;
-	}
-
-    private void OnDestroy() {
-
-        BallThrowMovement.ThrowEvent -= ShowPowers;
+        redPower = 0;
+        purplePower = 1f;
+        redDuration = 0;
+        PowerEvent();
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    static public void AddRed() {
 
-    void ShowPowers() {
-
-        manaGameObject.SetActive(true);
-        powersGameObject.SetActive(true);
+        redPower++;
+        PowerEvent();
     }
+
+    static public void AddPurple() {
+
+        purplePower += 0.1f;
+        if(purplePower >= 1) {
+            purplePower = 1;
+        }
+        PowerEvent();
+    }
+
+    static public void SpendPurple(float x) {
+
+        if (SlowTime.isSlow) {
+            x = x / 3;
+        }
+
+        purplePower -= x;
+        if(purplePower <= 0) {
+            purplePower = 0;
+        }
+        PowerEvent();
+    }
+
+
 }

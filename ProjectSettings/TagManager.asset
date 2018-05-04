@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Pin
   - Zone
+  - EndCamera
+  - Manager
+  - DeathMenu
   layers:
   - Default
   - TransparentFX
@@ -17,8 +20,8 @@ TagManager:
   - 
   - Lane
   - Ball
-  - 
-  - 
+  - Wall
+  - Ghost
   - 
   - 
   - 

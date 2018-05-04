@@ -11,9 +11,9 @@ public class ExtraPin : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-        
-	}
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,9 +24,9 @@ public class ExtraPin : MonoBehaviour {
 
         if (ballLayerMask == (ballLayerMask | (1 << other.gameObject.layer))) {
 
-            RoundManager.AddPoint();
-            Destroy(gameObject);
+            LevelManager.AddPoints(1);
             ExtraPinEvent();
+            Destroy(gameObject);
         }
     }
 }

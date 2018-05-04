@@ -7,29 +7,51 @@ public class BallRollingMovement : MonoBehaviour {
     public BallThrowMovement ballThrowMovement;
     public float turningSpeed;
     Rigidbody rigid;
-    public bool wasHit;
 
 
     // Use this for initialization
     void Start () {
 
         rigid = GetComponent<Rigidbody>();
-        wasHit = false;
     }
-	
+
+    private void Update() {
+
+        if (ballThrowMovement.ballIsMoving && LevelManager.playerIsAlive) {
+
+            float accelerationValue = Mathf.Abs(Input.acceleration.x);
+
+            if (accelerationValue > 0.05) {
+
+                PowersManager.SpendPurple(0.005f);
+            }
+        }
+
+        
+    }
+
     private void FixedUpdate() {
 
-        if (ballThrowMovement.ballIsMoving && !wasHit) {
+        float xValue;
+
+        if (ballThrowMovement.ballIsMoving && LevelManager.playerIsAlive) {
+
+
+            if(PowersManager.purplePower > 0) {
+
+                xValue = Input.acceleration.x * turningSpeed;
+            }
+            else {
+                xValue = 0;
+            }
+
             rigid.velocity = new Vector3(
-                Input.acceleration.x * turningSpeed,
-                rigid.velocity.y,
-                ballThrowMovement.zSpeed
-            );
+                    xValue,
+                    rigid.velocity.y,
+                    ballThrowMovement.zSpeed
+                );
+
         }
     }
 
-    public void Hit() {
-
-        wasHit = true;
-    }
 }

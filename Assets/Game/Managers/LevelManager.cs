@@ -7,12 +7,9 @@ public class LevelManager : MonoBehaviour {
     public static Level selectedLevel;
     public SceneTransitionHelper sceneTransitionHelper;
     public Level defaultLevel;
-
+    public static bool playerIsAlive;
 
     public static int currentPoints;
-    public static int currentRound;
-    public static int pointsRequired;
-    public static int maxRounds;
 
     private void Awake() {
         
@@ -25,16 +22,10 @@ public class LevelManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-    }
-	
-
-    public static void StartLevel() {
-
         currentPoints = 0;
-        currentRound = 1;
-        pointsRequired = selectedLevel.pointsRequired;
-        maxRounds = selectedLevel.maxRounds;
+        playerIsAlive = true;
     }
+
 
     public void EndLevel() {
 
@@ -48,8 +39,23 @@ public class LevelManager : MonoBehaviour {
         sceneTransitionHelper.LoadEndGame();
     }
 
-    public static bool HasWon() {
 
-        return currentPoints > pointsRequired;
+    bool HasWon() {
+
+        return currentPoints == selectedLevel.maxPoints;
     }
+
+    public static void AddPoints(int x) {
+
+        currentPoints += x;
+    }
+
+    public static void KillPlayer() {
+
+        playerIsAlive = false;
+        UIManager.ShowDeathMenu(true);
+    }
+
+    
+
 }

@@ -9,7 +9,7 @@ public class Jump : MonoBehaviour {
     public GroundCheck groundCheck;
     Rigidbody rigid;
     public float jumpSpeed;
-    bool wasHit;
+    
     
 
     private void Start() {
@@ -23,7 +23,7 @@ public class Jump : MonoBehaviour {
 
             if(Input.GetTouch(0).position.y > 200) {
 
-                if (groundCheck.grounded && !wasHit) {
+                if (groundCheck.grounded && LevelManager.playerIsAlive) {
 
                     rigid.velocity = new Vector3(
                         rigid.velocity.x,
@@ -32,10 +32,5 @@ public class Jump : MonoBehaviour {
                 }
             }
         }
-    }
-
-    public void Hit() {
-
-        wasHit = true;
     }
 }

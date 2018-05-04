@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Level")]
 public class Level : ScriptableObject {
 
-    public int pointsRequired;
-    public int maxRounds;
+    public int maxPoints;
+    public GameObject levelPrefab;
 
     public void SelectThisLevel() {
 

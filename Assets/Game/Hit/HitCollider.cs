@@ -20,7 +20,10 @@ public class HitCollider : MonoBehaviour {
 
         if (ballLayerMask == (ballLayerMask | (1 << other.gameObject.layer))) {
 
-            other.gameObject.SendMessage("Hit");
+
+            if (LevelManager.playerIsAlive) {
+                LevelManager.KillPlayer();
+            }
         }
     }
 }

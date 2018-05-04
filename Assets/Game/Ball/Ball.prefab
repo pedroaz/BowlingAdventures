@@ -90,6 +90,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 757c28602172db44287f091831f11f3e, type: 2}
   m_StaticBatchInfo:
@@ -157,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballThrowMovement: {fileID: 114767491571650208}
-  turningSpeed: 4
+  turningSpeed: 13
   wasHit: 0
 --- !u!114 &114490243074720380
 MonoBehaviour:

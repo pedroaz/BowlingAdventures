@@ -11,28 +11,11 @@ public class CameraController : MonoBehaviour {
         Screen.orientation = ScreenOrientation.Portrait;
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     private void LateUpdate() {
 
-        if (!ballThrowMovement.grabbingBall) {
+        if (ballThrowMovement.ballIsMoving) {
 
-            Vector3 pos = new Vector3(
-            offset.x,
-            ballThrowMovement.transform.position.y + offset.y,
-            ballThrowMovement.transform.position.z + offset.z);
-
-            transform.position = pos;
+            transform.position = ballThrowMovement.transform.position + offset;
         }
-
-        
     }
 }
