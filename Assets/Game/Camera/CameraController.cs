@@ -2,20 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controlls the main camera
+/// It follows the Ball with an offset
+/// Also set the screen orientation to portrait mode
+/// </summary>
 public class CameraController : MonoBehaviour {
 
-    public BallThrowMovement ballThrowMovement;
-    public Vector3 offset;
+    [Tooltip("The offsed of the camera to the ball")]
+    [SerializeField] private Vector3 offset;
+
+    [SerializeField] private BallStats ballStats;
+
+    [SerializeField] private GameObject ball;
+
 
     private void Awake() {
+
         Screen.orientation = ScreenOrientation.Portrait;
     }
 
     private void LateUpdate() {
 
-        if (ballThrowMovement.ballIsMoving) {
+        if (ballStats.BallIsMoving) {
 
-            transform.position = ballThrowMovement.transform.position + offset;
+            transform.position = ball.transform.position + offset;
         }
     }
 }

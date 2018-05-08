@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour {
 
+    [SerializeField] private PowersStats powersStats;
+
     public float maxDuration;
     public float currentDuration;
 
@@ -29,13 +31,13 @@ public class Ghost : MonoBehaviour {
 
     public void ActivateGhost() {
 
-        if (PowersManager.redPower >= 1) {
+        if (powersStats.HasRedPower()) {
 
             if (!isGhost && !SlowTime.isSlow) {
 
                 isGhost = true;
 
-                PowersManager.RemoveRed();
+                powersStats.ChangeRedPowerAmount(-1);
 
                 currentDuration = maxDuration;
 
@@ -58,7 +60,9 @@ public class Ghost : MonoBehaviour {
                 currentDuration = 0;
             }
 
-            PowersManager.redDuration = currentDuration / maxDuration;
+            //powersStats.RedDuration = 
+
+            //PowersManager.redDuration = currentDuration / maxDuration;
             GhostEvent();
 
 

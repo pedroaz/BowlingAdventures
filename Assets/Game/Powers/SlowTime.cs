@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class SlowTime : MonoBehaviour {
 
+
+    //if (SlowTime.isSlow) {
+    //        x = x / 3;
+    //    }
+
+    [SerializeField] private PowersStats powersStats;
+
     public float maxDuration;
     public float currentDuration;
     static public bool isSlow;
@@ -19,11 +26,11 @@ public class SlowTime : MonoBehaviour {
 	
     public void ActivateSlow() {
 
-        if(PowersManager.redPower >= 1) {
+        if(powersStats.HasRedPower()) {
 
             if (!isSlow && !Ghost.isGhost) {
 
-                PowersManager.RemoveRed();
+                //PowersManager.RemoveRed();
 
                 isSlow = true;
 
@@ -46,7 +53,7 @@ public class SlowTime : MonoBehaviour {
                 currentDuration = 0;
             }
 
-            PowersManager.redDuration = currentDuration / maxDuration;
+            //PowersManager.redDuration = currentDuration / maxDuration;
             SlowEvent();
 
 

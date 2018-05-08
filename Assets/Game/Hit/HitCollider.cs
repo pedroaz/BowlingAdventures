@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class HitCollider : MonoBehaviour {
 
-    public LayerMask ballLayerMask;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [Tooltip("What should be considered the layer mask")]
+    [SerializeField] private LayerMask ballLayerMask;
 
     private void OnTriggerEnter(Collider other) {
 
-        if (ballLayerMask == (ballLayerMask | (1 << other.gameObject.layer))) {
-
+        if (GeneralFunctionsHelper.CheckLayerCollision(other.gameObject.layer, ballLayerMask)) {
 
             if (LevelManager.playerIsAlive) {
                 LevelManager.KillPlayer();

@@ -1,32 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RedCrystal : MonoBehaviour {
 
+    [Tooltip("Amount of red power gain when the crystal is colletcted")]
+    [Range(0, 10)]
+    [SerializeField] private int redAmountToGain;
 
-    public LayerMask ballLayerMask;
-    public delegate void RedCrystalDelegate();
-    public static event RedCrystalDelegate RedCrystalEvent;
+    [Tooltip("What should be considered the ballLayerMask")]
+    [SerializeField] private LayerMask ballLayerMask;
 
+    [SerializeField] private PowersStats powersStats;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    /// <summary>
+    /// Event called when a red crystal is picked up
+    /// </summary>
+    public static event PickUpRedCrystalDelegate PickUpRedCrystalEvent;
+    public delegate void PickUpRedCrystalDelegate();
+    
     private void OnTriggerEnter(Collider other) {
 
-        if (ballLayerMask == (ballLayerMask | (1 << other.gameObject.layer))) {
+        if (GeneralFunctionsHelper.CheckLayerCollision(other.gameObject.layer, ballLayerMask)) {
 
-            PowersManager.AddRed();
-            RedCrystalEvent();
-            Destroy(this.gameObject);
+            PickUpPurpleCrystal(redAmountToGain);
         }
+    }
+
+    /// <summary>
+    /// Pick up a purple Crystal and increase the player purple power
+    /// </summary>
+    void PickUpPurpleCrystal(int redAmountToGain) {
+
+        powersStats.ChangeRedPowerAmount(redAmountToGain);
+        PickUpRedCrystalEvent();
+        Destroy(this.gameObject);
     }
 }

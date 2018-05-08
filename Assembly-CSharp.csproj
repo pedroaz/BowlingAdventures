@@ -59,8 +59,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Game\Ball\BallRollingMovement.cs" />
-    <Compile Include="Assets\Game\Ball\BallThrowMovement.cs" />
+    <Compile Include="Assets\Game\Ball\BallFowardMovement.cs" />
+    <Compile Include="Assets\Game\Ball\BallSideMovement.cs" />
+    <Compile Include="Assets\Game\Ball\BallStats.cs" />
     <Compile Include="Assets\Game\Ball\GroundCheck.cs" />
     <Compile Include="Assets\Game\Camera\CameraController.cs" />
     <Compile Include="Assets\Game\Crystals\PurpleCrystal.cs" />
@@ -71,13 +72,14 @@
     <Compile Include="Assets\Game\Managers\EndSceneManager.cs" />
     <Compile Include="Assets\Game\Managers\LevelManager.cs" />
     <Compile Include="Assets\Game\Managers\PlayerManager.cs" />
-    <Compile Include="Assets\Game\Managers\PowersManager.cs" />
     <Compile Include="Assets\Game\Pin\EndPins.cs" />
     <Compile Include="Assets\Game\Pin\ExtraPin.cs" />
     <Compile Include="Assets\Game\Powers\Ghost.cs" />
     <Compile Include="Assets\Game\Powers\Jump.cs" />
+    <Compile Include="Assets\Game\Powers\PowersStats.cs" />
     <Compile Include="Assets\Game\Powers\SlowTime.cs" />
     <Compile Include="Assets\Game\UI\UIManager.cs" />
+    <Compile Include="Assets\Helpers\GeneralFunctionsHelper.cs" />
     <Compile Include="Assets\Helpers\SceneTransitionHelper.cs" />
     <Compile Include="Assets\Menus\EndGame\EndGameManager.cs" />
     <Compile Include="Assets\Menus\SelectLevelMenu\LevelBox.cs" />

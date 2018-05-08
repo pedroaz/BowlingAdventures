@@ -1,30 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PurpleCrystal : MonoBehaviour {
 
-    public LayerMask ballLayerMask;
-    public delegate void PurpleCrystalDelegate();
-    public static event PurpleCrystalDelegate PurpleCrystalEvent;
+    [Tooltip("Percentage value between 0 and 1.")]
+    [SerializeField] private float percentageToGain;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private PowersStats powersStats;
+
+    [SerializeField] private LayerMask ballLayerMask;
+
+    /// <summary>
+    /// Event called when a purple crystal is picked up
+    /// </summary>
+    public static event PickUpPurpleCrystalDelegate PickUpPurpleCrystalEvent;
+    public delegate void PickUpPurpleCrystalDelegate();
+
+    [ExecuteInEditMode]
+    void OnValidate() {
+        percentageToGain = Mathf.Clamp01(percentageToGain);
+    }
 
     private void OnTriggerEnter(Collider other) {
 
-        if (ballLayerMask == (ballLayerMask | (1 << other.gameObject.layer))) {
+        if (GeneralFunctionsHelper.CheckLayerCollision(other.gameObject.layer, ballLayerMask)) {
 
-            PowersManager.AddPurple();
-            PurpleCrystalEvent();
-            Destroy(this.gameObject);
+            PickUpPurpleCrystal(percentageToGain);
         }
     }
+
+    /// <summary>
+    /// Pick up a purple Crystal and increase the player purple power
+    /// </summary>
+    void PickUpPurpleCrystal(float percentageToGain) {
+
+        powersStats.ChangePurplePowerAmount(percentageToGain);
+        PickUpPurpleCrystalEvent();
+        Destroy(this.gameObject);
+    }
+
+
 }

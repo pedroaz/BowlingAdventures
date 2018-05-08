@@ -19,13 +19,13 @@ public class UIManager : MonoBehaviour {
     void Start () {
 
 
-        BallThrowMovement.ThrowEvent += ShowPowers;
+        //BallThrowMovement.ThrowEvent += ShowPowers;
         ExtraPin.ExtraPinEvent += UpdatePointsText;
-        RedCrystal.RedCrystalEvent += UpdateRedText;
-        PurpleCrystal.PurpleCrystalEvent += UpdatePurpleSlider;
+        //RedCrystal.RedCrystalEvent += UpdateRedText;
+        //PurpleCrystal.PurpleCrystalEvent += UpdatePurpleSlider;
         SlowTime.SlowEvent += UpdateRedSlider;
         Ghost.GhostEvent += UpdateRedSlider;
-        PowersManager.PowerEvent += UpdateAll;
+        //PowersManager.PowerEvent += UpdateAll;
 
         UpdateAll();
     }
@@ -33,12 +33,12 @@ public class UIManager : MonoBehaviour {
     private void OnDestroy() {
 
         ExtraPin.ExtraPinEvent -= UpdatePointsText;
-        RedCrystal.RedCrystalEvent -= UpdateRedText;
-        PurpleCrystal.PurpleCrystalEvent += UpdatePurpleSlider;
-        BallThrowMovement.ThrowEvent -= ShowPowers;
+        //RedCrystal.RedCrystalEvent -= UpdateRedText;
+        //PurpleCrystal.PurpleCrystalEvent += UpdatePurpleSlider;
+        //BallThrowMovement.ThrowEvent -= ShowPowers;
         SlowTime.SlowEvent -= UpdateRedSlider;
         Ghost.GhostEvent -= UpdateRedSlider;
-        PowersManager.PowerEvent -= UpdateAll;
+        //PowersManager.PowerEvent -= UpdateAll;
     }
 
 
@@ -66,29 +66,30 @@ public class UIManager : MonoBehaviour {
 
     void UpdatePointsText() {
 
-        pointsText.text = "Points: " + LevelManager.currentPoints + " / " + LevelManager.selectedLevel.maxPoints;
+        //pointsText.text = "Points: " + LevelManager.currentPoints + " / " + LevelManager.selectedLevel.MaxPoints;
+        pointsText.text = "Points: " + LevelManager.currentPoints + " / " + 10;
     }
 
     void UpdateRedText() {
 
-        redCrystalText.text = PowersManager.redPower + "x";
+        //redCrystalText.text = PowersManager.redPower + "x";
     }
 
     void UpdatePurpleSlider() {
 
-        purpleSlider.value = PowersManager.purplePower;
+        //purpleSlider.value = PowersManager.purplePower;
     }
 
     void UpdateRedSlider() {
 
-        redSlider.value = PowersManager.redDuration;
+        //redSlider.value = PowersManager.redDuration;
 
-        if(PowersManager.redDuration == 0) {
-            redGameObject.SetActive(false);
-        }
-        else {
-            redGameObject.SetActive(true);
-        }
+        //if(PowersManager.redDuration == 0) {
+        //    redGameObject.SetActive(false);
+        //}
+        //else {
+        //    redGameObject.SetActive(true);
+        //}
 
     }
 

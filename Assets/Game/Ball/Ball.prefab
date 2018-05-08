@@ -157,9 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdebe002e280d14bb5144c6bd70fb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballStats: {fileID: 11400000, guid: 69f7d45a9d9a1f74cbf2a0d49d54fa15, type: 2}
   ballThrowMovement: {fileID: 114767491571650208}
-  turningSpeed: 13
-  wasHit: 0
 --- !u!114 &114490243074720380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,11 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828924f0ed14072468f528d94df9fbcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laneCollider: {fileID: 0}
   zSpeed: 7
-  xSpeed: 0.5
   ballIsMoving: 0
-  grabbingBall: 0
 --- !u!135 &135976807971879924
 SphereCollider:
   m_ObjectHideFlags: 1

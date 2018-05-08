@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour {
 
         currentPoints = 0;
         playerIsAlive = true;
-        Instantiate(selectedLevel.levelPrefab);
+        Instantiate(selectedLevel.LevelPrefab);
     }
 
 
@@ -44,7 +44,8 @@ public class LevelManager : MonoBehaviour {
 
     bool HasWon() {
 
-        return currentPoints == selectedLevel.maxPoints;
+        //return currentPoints == selectedLevel.MaxPoints;
+        return true;
     }
 
     public static void AddPoints(int x) {
