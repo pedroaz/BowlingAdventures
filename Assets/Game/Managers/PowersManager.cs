@@ -24,7 +24,7 @@ public class PowersManager : MonoBehaviour {
     static public void AddRed() {
 
         redPower++;
-        PowerEvent();
+        PowerEvent(); 
     }
 
     static public void RemoveRed() {

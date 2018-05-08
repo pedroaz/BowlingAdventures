@@ -55120,7 +55120,6 @@ MonoBehaviour:
   - {fileID: 54386548347761410}
   - {fileID: 54110825342729414}
   - {fileID: 54458652951444506}
-  endSceneManager: {fileID: 0}
 --- !u!114 &114623902282633526
 MonoBehaviour:
   m_ObjectHideFlags: 1

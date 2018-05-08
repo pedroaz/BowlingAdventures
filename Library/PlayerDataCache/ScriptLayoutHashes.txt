@@ -8,7 +8,6 @@ Assets/Game/Game.unity
 Assets/Menus/EndGame/EndGame.unity
 SceneListEnd?
 9b40308ee5b9d59fcafbae6fb63b21b9 Assembly-CSharp.dll:.BallRollingMovement
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Harden
 8f54e963f20b042da2a425e4eed43dd3 Assembly-CSharp.dll:.HitCollider
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -88,7 +87,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SlowTime
+94adf6cb9c8defda265739046fd0d91e Assembly-CSharp.dll:.SlowTime
 a60373df9f4045d824f369db50a497da Assembly-CSharp.dll:.LevelManager
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -117,7 +116,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PowersManager
+d0c55802edd779999a24086f6f37adae Assembly-CSharp.dll:.PowersManager
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneTransitionHelper
@@ -242,7 +241,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 948ba9fcb9b02ea2798e9ac85022ab05 Assembly-CSharp.dll:.CameraController
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 0aa8145d7fd0570ae5cd7771bfdb72d4 Assembly-CSharp.dll:.Jump
-2cb5106cb8f78346963307fba6efbdcd Assembly-CSharp.dll:.LevelSelecter
 bc79872c81f3cda9be1ec427f70f92aa Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 0561521e336e270e6e5a9c61387cb838 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
 bc79872c81f3cda9be1ec427f70f92aa Vuforia.UnityExtensions.dll:Vuforia.AnchorStageBehaviour
@@ -311,6 +309,10 @@ a924c90a95cf65003f662aa5e30abb6b Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 ca07c37cbff0cfb2157209a1328e70cb Assembly-CSharp.dll:.Level
 bf7b9a1c65f326f083096abf84aa1534 Assembly-CSharp.dll:.UIManager
-910fc12ddb7c471e8fcca42faf5094d0 Assembly-CSharp.dll:.EndPins
+72381d8bbd75f68a943e9748e11c4de9 Assembly-CSharp.dll:.EndPins
 9f08e99d1157d0ef7d34aeb1ae831686 Assembly-CSharp.dll:.EndSceneManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DestroyCollider
+5adcc8ccb144fac25040c9d201f7af58 Assembly-CSharp.dll:.Ghost
+7e15947d0509f134c58ec59125d1ae58 Assembly-CSharp.dll:.World
+50b91345d080ceae2dbab52a47487e8d Assembly-CSharp.dll:.Universe
+4f4330c38d556df3542f537b53c47350 Assembly-CSharp.dll:.LevelBox
