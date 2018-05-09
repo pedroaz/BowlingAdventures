@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour {
 
     private void LateUpdate() {
 
-        if (ballStats.BallIsMoving) {
+        if (ballStats.ballIsMoving) {
 
             transform.position = ball.transform.position + offset;
         }

@@ -52,7 +52,7 @@ public class BallSideMovement : MonoBehaviour {
             rigid.velocity = new Vector3(
                     sideVelocity,
                     rigid.velocity.y,
-                    rigid.velocity.z
+                    ballStats.BallInitialFowardSpeed
             );
         }
     }
@@ -80,7 +80,7 @@ public class BallSideMovement : MonoBehaviour {
     /// <returns></returns>
     bool BallIsRolling() {
 
-        return ballStats.BallIsMoving && levelManager.PlayerIsAlive();
+        return ballStats.ballIsMoving && levelManager.PlayerIsAlive();
     }
 
     /// <summary>

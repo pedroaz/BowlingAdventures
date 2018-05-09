@@ -71,9 +71,9 @@
     <Compile Include="Assets\Game\Hit\HitCollider.cs" />
     <Compile Include="Assets\Game\Init-End\EndDisplayManager.cs" />
     <Compile Include="Assets\Game\Init-End\GameInitializer.cs" />
+    <Compile Include="Assets\Game\LevelBuilder\Mandatory\EndPins.cs" />
     <Compile Include="Assets\Game\Levels\Level.cs" />
     <Compile Include="Assets\Game\Levels\LevelManager.cs" />
-    <Compile Include="Assets\Game\Pin\EndPins.cs" />
     <Compile Include="Assets\Game\Pin\ExtraPin.cs" />
     <Compile Include="Assets\Game\Powers\Ghost.cs" />
     <Compile Include="Assets\Game\Powers\PowersStats.cs" />

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: BallStats
   m_EditorClassIdentifier: 
   ballSideVelocity: 10
-  ballFowardVelocity: 10
-  ballInitialFowardSpeed: 10
+  ballFowardVelocity: 5
+  ballInitialFowardSpeed: 5
   ballJumpVelocity: 10

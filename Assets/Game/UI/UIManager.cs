@@ -94,6 +94,7 @@ public class UIManager : MonoBehaviour {
             redGameObject.SetActive(false);
         }
         else {
+
             redGameObject.SetActive(true);
         }
 
@@ -105,7 +106,7 @@ public class UIManager : MonoBehaviour {
 
         for (int i = 0; i < menu.transform.childCount; i++) {
 
-            menu.transform.GetChild(i).gameObject.SetActive(true);
+            menu.transform.GetChild(i).gameObject.SetActive(value);
         }
     }
 }

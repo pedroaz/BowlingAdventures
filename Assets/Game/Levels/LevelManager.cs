@@ -65,10 +65,16 @@ public class LevelManager : ScriptableObject {
     /// <summary>
     /// Kill the player and show the death menu
     /// </summary>
-    public void KillPlayer() {
+    public void KillPlayer(bool showMenu) {
 
         playerIsAlive = false;
-        UIManager.ShowDeathMenu(true);
+        UIManager.ShowDeathMenu(showMenu);
+    }
+
+    public void RevivePlayer() {
+
+        playerIsAlive = true;
+        UIManager.ShowDeathMenu(false);
     }
 
     public bool PlayerIsAlive() {

@@ -2,8 +2,6 @@
 
 public class JumpMovement : MonoBehaviour {
 
-    [SerializeField] private float jumpSpeed;
-
     [SerializeField] private BallStats ballStats;
 
     [SerializeField] private LevelManager levelManager;
@@ -18,12 +16,12 @@ public class JumpMovement : MonoBehaviour {
 
     private void Update() {
 
-        if (Input.touchCount == 1 && ballStats.BallIsMoving) {
+        if (Input.touchCount == 1 && ballStats.ballIsMoving) {
 
             if (IsClickingOnJumpingArea()) {
 
-                if (ballStats.Grounded && levelManager.PlayerIsAlive()) {
 
+                if (ballStats.grounded && levelManager.PlayerIsAlive()) {
                     Jump();
                 }
             }
@@ -37,9 +35,10 @@ public class JumpMovement : MonoBehaviour {
 
     void Jump() {
 
+
         rigid.velocity = new Vector3(
                         rigid.velocity.x,
-                        jumpSpeed,
+                        ballStats.BallJumpVelocity,
                         rigid.velocity.z);
     }
 }

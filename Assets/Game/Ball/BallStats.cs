@@ -18,8 +18,9 @@ public class BallStats : ScriptableObject {
 
     [Tooltip("Jump velocity which is aplied when the ball jump")]
     [SerializeField] private float ballJumpVelocity;
-    
-    private bool
+
+    [SerializeField]
+    public bool
         ballIsMoving, // bool to check when the ball is moving
         grounded; // bool to check when the ball is grounded
 
@@ -33,9 +34,6 @@ public class BallStats : ScriptableObject {
         ballJumpVelocity = Mathf.Clamp(ballJumpVelocity, 0, 100);
     }
 
-    /// <summary>
-    /// Velocity of the ball
-    /// </summary>
     public float BallSideVelocity {
 
         get {
@@ -51,9 +49,6 @@ public class BallStats : ScriptableObject {
         }
     }
 
-    /// <summary>
-    /// Foward velocity of the ball
-    /// </summary>
     public float BallFowardVelocity {
 
         get {
@@ -69,9 +64,6 @@ public class BallStats : ScriptableObject {
         }
     }
 
-    /// <summary>
-    /// Initla Speed of the Ball
-    /// </summary>
     public float BallInitialFowardSpeed {
         get {
 
@@ -79,9 +71,6 @@ public class BallStats : ScriptableObject {
         }
     }
 
-    /// <summary>
-    /// Jump velocity of the ball
-    /// </summary>
     public float BallJumpVelocity {
 
         get {
@@ -97,22 +86,4 @@ public class BallStats : ScriptableObject {
         }
     }
 
-    /// <summary>
-    /// Is the ball moving
-    /// </summary>
-    public bool BallIsMoving{ get; set; }
-
-    /// <summary>
-    /// Is the ball grounded
-    /// </summary>
-    public bool Grounded {
-        get {
-
-            return grounded;
-        }
-        set {
-
-            grounded = value;
-        }
-    }
 }

@@ -32,7 +32,7 @@ public class GroundCheck : MonoBehaviour {
 
         if (GeneralFunctionsHelper.CheckLayerCollision(other.gameObject.layer, groundLayerMask)) {
 
-            ballStats.Grounded = true;
+            ballStats.grounded = true;
         }
     }
 
@@ -40,7 +40,7 @@ public class GroundCheck : MonoBehaviour {
 
         if(GeneralFunctionsHelper.CheckLayerCollision(other.gameObject.layer, groundLayerMask)) {
 
-            ballStats.Grounded = true;
+            ballStats.grounded = true;
         }
     }
 

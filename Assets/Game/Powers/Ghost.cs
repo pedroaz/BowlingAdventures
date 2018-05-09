@@ -39,7 +39,6 @@ public class Ghost : MonoBehaviour {
 
                 ChangeToGhostLayer(true);
 
-                GhostEvent();
 
                 StartCoroutine(Duration());
             }
@@ -60,6 +59,7 @@ public class Ghost : MonoBehaviour {
                 currentDuration = 0;
             }
             powersStats.RedDuration = currentDuration / maxGhostDuration;
+            GhostEvent();
             yield return null;
         }
 

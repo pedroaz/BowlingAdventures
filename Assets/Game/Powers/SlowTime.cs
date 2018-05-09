@@ -41,8 +41,6 @@ public class SlowTime : MonoBehaviour {
 
                 SlowTheTime(true);
 
-                SlowEvent();
-
                 StartCoroutine(Duration());
             }
         }
@@ -52,13 +50,13 @@ public class SlowTime : MonoBehaviour {
 
         while (currentDuration > 0) {
 
-            currentDuration-= 0.003f;
+            currentDuration-= 0.01f;
             if (currentDuration < 0.01f) {
                 currentDuration = 0;
             }
 
             powersStats.RedDuration = currentDuration / maxSlowDuration;
-
+            SlowEvent();
             yield return null;
         }
 

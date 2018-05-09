@@ -9,7 +9,6 @@ public class PowersStats : ScriptableObject {
    [SerializeField] private float currentPurplePower;
    [SerializeField] private float redDuration;
 
-
     /// <summary>
     /// Purple Power varies between 0 and 1
     /// </summary>

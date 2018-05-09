@@ -36,7 +36,7 @@ public class BallFowardMovement : MonoBehaviour {
     /// </summary>
     void ThorwBallInput() {
 
-        if (!ballStats.BallIsMoving) {
+        if (!ballStats.ballIsMoving) {
 
             if (Input.touchCount > 0) {
 
@@ -70,14 +70,12 @@ public class BallFowardMovement : MonoBehaviour {
     void FreezeBall(bool value) {
 
         if (value) {
-            ballStats.BallIsMoving = false;
+            ballStats.ballIsMoving = false;
             rigid.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
         }
         else {
-            ballStats.BallIsMoving = true;
+            ballStats.ballIsMoving = true;
             rigid.constraints = RigidbodyConstraints.None;
         }
-
-
     }
 }
