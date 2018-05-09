@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b880b01eb8030418c4d61579908081, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
-  worldName: 
+  worldName: Fire
   listOfLevels: []

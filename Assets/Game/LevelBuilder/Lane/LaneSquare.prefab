@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 33609997940177038}
   - component: {fileID: 114676125855400918}
   - component: {fileID: 64344024199867840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaneSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}

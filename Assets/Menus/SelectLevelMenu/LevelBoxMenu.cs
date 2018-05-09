@@ -1,15 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelBoxMenu : MonoBehaviour {
 
-    public GameObject buttonPrefab;
-    public Universe universe;
+    [SerializeField] private GameObject buttonPrefab;
+    [SerializeField] private Universe universe;
 
-	// Use this for initialization
+
 	void Start () {
+
+        AddAllButtons();
+    }
+	
+    public void AddAllButtons() {
+
+        RemoveAllButtons();
 
         for (int i = 0; i < universe.selectedWorld.listOfLevels.Count; i++) {
 
@@ -17,14 +22,16 @@ public class LevelBoxMenu : MonoBehaviour {
             btn.transform.parent = transform;
             btn.GetComponent<Button>().onClick.AddListener(universe.selectedWorld.listOfLevels[i].SelectThisLevel);
         }
+    }
 
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void RemoveAllButtons() {
 
+
+        for (int i = 0; i < transform.childCount; i++) {
+
+            Destroy(transform.GetChild(i).gameObject);
+        }
+
+    }
     
 }

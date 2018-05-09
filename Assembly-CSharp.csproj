@@ -85,6 +85,7 @@
     <Compile Include="Assets\Menus\SelectLevelMenu\LevelBoxMenu.cs" />
     <Compile Include="Assets\Menus\SelectLevelMenu\Universe.cs" />
     <Compile Include="Assets\Menus\SelectLevelMenu\World.cs" />
+    <Compile Include="Assets\Menus\SelectLevelMenu\WorldSelector.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Constant.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Enum.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_IconUtility.cs" />
