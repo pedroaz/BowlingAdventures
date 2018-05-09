@@ -158,7 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballStats: {fileID: 11400000, guid: 69f7d45a9d9a1f74cbf2a0d49d54fa15, type: 2}
-  ballThrowMovement: {fileID: 114767491571650208}
+  powersStats: {fileID: 11400000, guid: 5aca379317e988d4daa51835be761ee9, type: 2}
+  levelManager: {fileID: 11400000, guid: 034d9af02f053b44986f8b8e0831d6d8, type: 2}
 --- !u!114 &114490243074720380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,12 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c6f20a8e381bc41a2a65b1cc57e60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: -0.18, z: 0}
-  ballTransform: {fileID: 4450002931352772}
-  grounded: 0
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  offset: {x: 0, y: -0.18, z: 0}
+  ballStats: {fileID: 0}
 --- !u!114 &114760509460887092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,8 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efd37dc69c8c2b4b8dbcdd629bdd365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheck: {fileID: 114490243074720380}
-  jumpSpeed: 5
+  jumpSpeed: 0
+  ballStats: {fileID: 11400000, guid: 69f7d45a9d9a1f74cbf2a0d49d54fa15, type: 2}
+  levelManager: {fileID: 11400000, guid: 034d9af02f053b44986f8b8e0831d6d8, type: 2}
 --- !u!114 &114767491571650208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,8 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828924f0ed14072468f528d94df9fbcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zSpeed: 7
-  ballIsMoving: 0
+  ballStats: {fileID: 11400000, guid: 69f7d45a9d9a1f74cbf2a0d49d54fa15, type: 2}
 --- !u!135 &135976807971879924
 SphereCollider:
   m_ObjectHideFlags: 1

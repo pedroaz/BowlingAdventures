@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SlowTime : MonoBehaviour {
@@ -9,14 +8,20 @@ public class SlowTime : MonoBehaviour {
     //        x = x / 3;
     //    }
 
+
+    [SerializeField] private float maxSlowDuration;
+
     [SerializeField] private PowersStats powersStats;
 
-    public float maxDuration;
-    public float currentDuration;
+    [SerializeField] private float currentDuration;
+
     static public bool isSlow;
 
-    public delegate void SlowDelegate();
+    /// <summary>
+    /// This event is called when the ghost object is activated
+    /// </summary>
     static public event SlowDelegate SlowEvent;
+    public delegate void SlowDelegate();
 
 	// Use this for initialization
 	void Start () {
@@ -30,37 +35,48 @@ public class SlowTime : MonoBehaviour {
 
             if (!isSlow && !Ghost.isGhost) {
 
-                //PowersManager.RemoveRed();
+                powersStats.ChangeRedPowerAmount(-1);
+                
+                currentDuration = maxSlowDuration;
 
-                isSlow = true;
+                SlowTheTime(true);
 
-                currentDuration = maxDuration;
-                Time.timeScale = 0.3f;
+                SlowEvent();
+
                 StartCoroutine(Duration());
             }
         }
-
-        
-
     }
 
     IEnumerator Duration() {
 
         while (currentDuration > 0) {
 
-            currentDuration-= 0.01f;
+            currentDuration-= 0.003f;
             if (currentDuration < 0.01f) {
                 currentDuration = 0;
             }
 
-            //PowersManager.redDuration = currentDuration / maxDuration;
-            SlowEvent();
-
+            powersStats.RedDuration = currentDuration / maxSlowDuration;
 
             yield return null;
         }
 
-        Time.timeScale = 1f;
-        isSlow = false;
+        SlowTheTime(false);
+
+    }
+
+    void SlowTheTime(bool value) {
+
+        if (value) {
+
+            isSlow = true;
+            Time.timeScale = 0.3f;
+        }
+        else {
+
+            Time.timeScale = 1f;
+            isSlow = false;
+        }
     }
 }

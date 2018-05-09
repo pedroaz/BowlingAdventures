@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelBox : MonoBehaviour {
+public class LevelBoxMenu : MonoBehaviour {
 
     public GameObject buttonPrefab;
     public Universe universe;

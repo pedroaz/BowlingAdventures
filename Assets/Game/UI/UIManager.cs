@@ -5,58 +5,60 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
-    public Text pointsText;
-    public Text redCrystalText;
-    public Slider redSlider;
-    public Slider purpleSlider;
+    [SerializeField] private PowersStats powersStats;
 
-    public GameObject purpleGameObject;
-    public GameObject redGameObject;
-    public GameObject powersGameObject;
+    [SerializeField] private LevelManager levelManager;
 
+    [SerializeField] private Text pointsText;
+    [SerializeField] private Text redCrystalText;
+    [SerializeField] private Slider redSlider;
+    [SerializeField] private Slider purpleSlider;
+
+    [SerializeField] private GameObject purpleGameObject;
+    [SerializeField] private GameObject redGameObject;
+    [SerializeField] private GameObject powersGameObject;
 
     // Use this for initialization
     void Start () {
 
 
-        //BallThrowMovement.ThrowEvent += ShowPowers;
-        ExtraPin.ExtraPinEvent += UpdatePointsText;
-        //RedCrystal.RedCrystalEvent += UpdateRedText;
-        //PurpleCrystal.PurpleCrystalEvent += UpdatePurpleSlider;
+        BallFowardMovement.ThrowEvent += ShowPowersUI;
+        ExtraPin.PickUpExtraPinEvent += UpdatePointsText;
+        RedCrystal.PickUpRedCrystalEvent += UpdateRedText;
+        PurpleCrystal.PickUpPurpleCrystalEvent += UpdatePurpleSlider;
         SlowTime.SlowEvent += UpdateRedSlider;
         Ghost.GhostEvent += UpdateRedSlider;
-        //PowersManager.PowerEvent += UpdateAll;
+        PowersStats.PowerAmountChangedEvent += UpdateAllUI;
 
-        UpdateAll();
+        UpdateAllUI();
     }
 
     private void OnDestroy() {
 
-        ExtraPin.ExtraPinEvent -= UpdatePointsText;
-        //RedCrystal.RedCrystalEvent -= UpdateRedText;
-        //PurpleCrystal.PurpleCrystalEvent += UpdatePurpleSlider;
-        //BallThrowMovement.ThrowEvent -= ShowPowers;
+        ExtraPin.PickUpExtraPinEvent -= UpdatePointsText;
+        RedCrystal.PickUpRedCrystalEvent -= UpdateRedText;
+        PurpleCrystal.PickUpPurpleCrystalEvent -= UpdatePurpleSlider;
+        BallFowardMovement.ThrowEvent -= ShowPowersUI;
         SlowTime.SlowEvent -= UpdateRedSlider;
         Ghost.GhostEvent -= UpdateRedSlider;
-        //PowersManager.PowerEvent -= UpdateAll;
+        PowersStats.PowerAmountChangedEvent -= UpdateAllUI;
     }
 
-
-    void ShowPowers() {
+    void ShowPowersUI() {
 
         purpleGameObject.SetActive(true);
         powersGameObject.SetActive(true);
         redGameObject.SetActive(true);
     }
 
-    void HidePowers() {
+    void HidePowerUIs() {
 
         purpleGameObject.SetActive(false);
         powersGameObject.SetActive(false);
         redGameObject.SetActive(false);
     }
 
-    void UpdateAll() {
+    void UpdateAllUI() {
 
         UpdatePointsText();
         UpdateRedText();
@@ -66,30 +68,34 @@ public class UIManager : MonoBehaviour {
 
     void UpdatePointsText() {
 
-        //pointsText.text = "Points: " + LevelManager.currentPoints + " / " + LevelManager.selectedLevel.MaxPoints;
-        pointsText.text = "Points: " + LevelManager.currentPoints + " / " + 10;
+        pointsText.text = 
+            "Points: " +
+            levelManager.CurrentPoints +
+            " / " + 
+            levelManager.MaxPoints;
     }
 
     void UpdateRedText() {
 
-        //redCrystalText.text = PowersManager.redPower + "x";
+        redCrystalText.text = powersStats.CurrentRedPower + "x";
     }
 
     void UpdatePurpleSlider() {
 
-        //purpleSlider.value = PowersManager.purplePower;
+        purpleSlider.value = powersStats.CurrentPurplePower;
     }
 
     void UpdateRedSlider() {
 
-        //redSlider.value = PowersManager.redDuration;
+        redSlider.value = powersStats.RedDuration;
 
-        //if(PowersManager.redDuration == 0) {
-        //    redGameObject.SetActive(false);
-        //}
-        //else {
-        //    redGameObject.SetActive(true);
-        //}
+        if (powersStats.RedDuration == 0) {
+
+            redGameObject.SetActive(false);
+        }
+        else {
+            redGameObject.SetActive(true);
+        }
 
     }
 

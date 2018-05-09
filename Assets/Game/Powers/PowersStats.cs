@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "PowerStats")]
 public class PowersStats : ScriptableObject {
 
-    //Class Variables
-    //Public Game Object Components
-    //This Game Object Components
+   [SerializeField] private float startingPurplePower;
+   [SerializeField] private float currentPurplePower;
+   [SerializeField] private float redDuration;
 
-    [SerializeField]
-    private float 
-        startingPurplePower,
-        currentPurplePower,
-        redDuration;
 
     /// <summary>
     /// Purple Power varies between 0 and 1

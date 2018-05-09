@@ -38,12 +38,16 @@ public class BallFowardMovement : MonoBehaviour {
 
         if (!ballStats.BallIsMoving) {
 
-            Touch touch = Input.GetTouch(0);
+            if (Input.touchCount > 0) {
 
-            if (touch.phase == TouchPhase.Ended) {
+                Touch touch = Input.GetTouch(0);
 
-                ThrowBall();
+                if (touch.phase == TouchPhase.Ended) {
+
+                    ThrowBall();
+                }
             }
+            
         }
     }
 
@@ -54,7 +58,7 @@ public class BallFowardMovement : MonoBehaviour {
 
         FreezeBall(false);
 
-        rigid.velocity = new Vector3(0, 0, ballStats.BallInitialSpeed);
+        rigid.velocity = new Vector3(0, 0, ballStats.BallInitialFowardSpeed);
 
         ThrowEvent();
     }

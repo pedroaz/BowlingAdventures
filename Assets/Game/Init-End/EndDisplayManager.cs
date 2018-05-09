@@ -1,33 +1,32 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EndSceneManager : MonoBehaviour {
+public class EndDisplayManager : MonoBehaviour {
 
-    public GameObject gameCamera;
+    [SerializeField] private GameObject gameCamera;
+    [SerializeField] Transform ballTransform;
+
     GameObject endCamera;
-    public Transform ballTransform;
-    LevelManager levelManager;
+    [SerializeField] private LevelManager levelManager;
 
-	// Use this for initialization
 	void Start () {
 
         endCamera = GameObject.FindGameObjectWithTag("EndCamera");
-        levelManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<LevelManager>();
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void EndScene() {
+    /// <summary>
+    /// Player the end scene of each level
+    /// </summary>
+    public void EndDisplay() {
 
         SwitchCameras();
-        PositionBall();
+        PositionBallOnCenter();
         StartCoroutine(End());
     }
 
+    /// <summary>
+    /// Switch from the main camera to the End scene Camera
+    /// </summary>
     void SwitchCameras() {
 
         gameCamera.gameObject.SetActive(false);
@@ -36,12 +35,19 @@ public class EndSceneManager : MonoBehaviour {
         endCamera.GetComponent<FlareLayer>().enabled = true;
     }
 
-    void PositionBall() {
+    /// <summary>
+    /// Position the ball on the center of the trak
+    /// </summary>
+    void PositionBallOnCenter() {
 
         ballTransform.position = new Vector3(
             0, ballTransform.position.y, ballTransform.position.z);
     }
 
+    /// <summary>
+    /// End two seconds and end the level
+    /// </summary>
+    /// <returns></returns>
     IEnumerator End() {
 
         yield return new WaitForSeconds(2);

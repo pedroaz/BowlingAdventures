@@ -9,6 +9,8 @@ public class BallSideMovement : MonoBehaviour {
         
     [SerializeField] private PowersStats powersStats;
 
+    [SerializeField] private LevelManager levelManager;
+
     private Rigidbody rigid;
 
     private void Awake() {
@@ -78,7 +80,7 @@ public class BallSideMovement : MonoBehaviour {
     /// <returns></returns>
     bool BallIsRolling() {
 
-        return ballStats.BallIsMoving && LevelManager.playerIsAlive;
+        return ballStats.BallIsMoving && levelManager.PlayerIsAlive();
     }
 
     /// <summary>

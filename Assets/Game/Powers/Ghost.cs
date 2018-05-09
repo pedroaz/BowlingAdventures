@@ -1,49 +1,45 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ghost : MonoBehaviour {
 
+    [SerializeField] private float maxGhostDuration;
+    [SerializeField] private float currentDuration;
+
     [SerializeField] private PowersStats powersStats;
 
-    public float maxDuration;
-    public float currentDuration;
+    [SerializeField] private GameObject ball;
 
-    public GameObject ball;
-
-    public delegate void GhostDelegate();
+    /// <summary>
+    /// This event is called when the ghost power is activated
+    /// </summary>
     static public event GhostDelegate GhostEvent;
+    public delegate void GhostDelegate();
 
     static public bool isGhost;
 
 
-    // Use this for initialization
     void Start () {
 
         isGhost = false;
-
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    /// <summary>
+    /// If has all the conditions active the ghost power
+    /// </summary>
     public void ActivateGhost() {
 
         if (powersStats.HasRedPower()) {
 
             if (!isGhost && !SlowTime.isSlow) {
 
-                isGhost = true;
-
                 powersStats.ChangeRedPowerAmount(-1);
 
-                currentDuration = maxDuration;
+                currentDuration = maxGhostDuration;
 
-                // Ghost
-                ball.layer = 11;
+                ChangeToGhostLayer(true);
 
+                GhostEvent();
 
                 StartCoroutine(Duration());
             }
@@ -51,6 +47,10 @@ public class Ghost : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// Decrease the duration of the power
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Duration() {
 
         while (currentDuration > 0) {
@@ -59,20 +59,29 @@ public class Ghost : MonoBehaviour {
             if (currentDuration < 0.01f) {
                 currentDuration = 0;
             }
-
-            //powersStats.RedDuration = 
-
-            //PowersManager.redDuration = currentDuration / maxDuration;
-            GhostEvent();
-
-
+            powersStats.RedDuration = currentDuration / maxGhostDuration;
             yield return null;
         }
 
 
-        isGhost = false;
+        ChangeToGhostLayer(false);
+    }
 
-        // Wall
-        ball.layer = 9;
+    /// <summary>
+    /// Change to ghost layer and change static variable
+    /// </summary>
+    /// <param name="value"></param>
+    void ChangeToGhostLayer(bool value) {
+
+        if (value) {
+
+            isGhost = true;
+            ball.layer = 11;
+        }
+        else {
+
+            isGhost = false;
+            ball.layer = 9;
+        }
     }
 }

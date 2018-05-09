@@ -72,10 +72,10 @@ public class BallStats : ScriptableObject {
     /// <summary>
     /// Initla Speed of the Ball
     /// </summary>
-    public float BallInitialSpeed {
+    public float BallInitialFowardSpeed {
         get {
 
-            return BallInitialSpeed;
+            return ballInitialFowardSpeed;
         }
     }
 

@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "SceneTransitionHelper")]
 public class SceneTransitionHelper : ScriptableObject {
 
     public void LoadMainMenu() {
+
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void LoadLevel() {
+    public void LoadGameLevel() {
 
         SceneManager.LoadScene("Game");
     }

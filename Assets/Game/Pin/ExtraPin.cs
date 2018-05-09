@@ -1,31 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ExtraPin : MonoBehaviour {
 
-    public LayerMask ballLayerMask;
+    [Tooltip("LayerMask of what is considered to be the ball")]
+    [SerializeField] private LayerMask ballLayerMask;
 
-    public delegate void ExtraPinDelegate();
-    public static event ExtraPinDelegate ExtraPinEvent;
+    /// <summary>
+    /// This event is called when an extra pin is picked up
+    /// </summary>
+    public static event PickUpExtraPinDelegate PickUpExtraPinEvent;
+    public delegate void PickUpExtraPinDelegate();
 
-	// Use this for initialization
-	void Start () {
-
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] LevelManager levelManager;
 
     private void OnTriggerEnter(Collider other) {
 
         if (ballLayerMask == (ballLayerMask | (1 << other.gameObject.layer))) {
 
-            LevelManager.AddPoints(1);
-            ExtraPinEvent();
+            levelManager.AddPoints(1);
+            PickUpExtraPinEvent();
             Destroy(gameObject);
         }
     }

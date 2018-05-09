@@ -5,11 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Level")]
 public class Level : ScriptableObject {
 
-    public GameObject LevelPrefab{ get; set; }
-    [SerializeField] private GameObject levelPrefab;
+    // Needs to be public
+    public GameObject levelPrefab;
+
+    [SerializeField] LevelManager levelManager;
 
     public void SelectThisLevel() {
 
-        LevelManager.selectedLevel = this;
+        levelManager.SelectLevel(this);
     }
 }

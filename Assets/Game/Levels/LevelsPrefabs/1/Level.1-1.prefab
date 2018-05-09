@@ -1511,6 +1511,7 @@ MonoBehaviour:
   ballLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  levelManager: {fileID: 0}
 --- !u!114 &114330176594913020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55109,17 +55110,8 @@ MonoBehaviour:
   ballLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  listOfPints:
-  - {fileID: 54935304465622252}
-  - {fileID: 54377361499341120}
-  - {fileID: 54822768223264390}
-  - {fileID: 54145638812003184}
-  - {fileID: 54566101951212560}
-  - {fileID: 54658448366650256}
-  - {fileID: 54677725804762404}
-  - {fileID: 54386548347761410}
-  - {fileID: 54110825342729414}
-  - {fileID: 54458652951444506}
+  listOfFinalPins: []
+  levelManager: {fileID: 0}
 --- !u!114 &114623902282633526
 MonoBehaviour:
   m_ObjectHideFlags: 1
