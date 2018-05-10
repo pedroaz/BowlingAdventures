@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 184168606}
   - component: {fileID: 184168605}
   m_Layer: 5
-  m_Name: PinsCollected
+  m_Name: TotalPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3115,6 +3115,7 @@ MonoBehaviour:
   airColor: {r: 0.78039217, g: 0.8980392, b: 0.8862745, a: 1}
   fireColor: {r: 1, g: 0.09803922, b: 0, a: 1}
   energyColor: {r: 1, g: 0.9607843, b: 0, a: 1}
+  totalPoints: {fileID: 184168605}
   listOfButtons:
   - {fileID: 1180678249}
   - {fileID: 2089662298}

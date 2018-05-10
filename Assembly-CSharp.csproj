@@ -81,6 +81,8 @@
     <Compile Include="Assets\Game\Powers\SlowTime.cs" />
     <Compile Include="Assets\Game\UI\UIManager.cs" />
     <Compile Include="Assets\Helpers\GeneralFunctionsHelper.cs" />
+    <Compile Include="Assets\Helpers\PersistentDataHelper.cs" />
+    <Compile Include="Assets\Helpers\SaveLoadHelper.cs" />
     <Compile Include="Assets\Helpers\SceneTransitionHelper.cs" />
     <Compile Include="Assets\Menus\EndGame\EndGameManager.cs" />
     <Compile Include="Assets\Menus\SelectLevelMenu\SelectMenuTheme.cs" />

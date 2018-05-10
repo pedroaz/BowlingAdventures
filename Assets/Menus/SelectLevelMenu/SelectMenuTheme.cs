@@ -13,8 +13,8 @@ public class SelectMenuTheme : MonoBehaviour {
     [SerializeField] private Color airColor;
     [SerializeField] private Color fireColor;
     [SerializeField] private Color energyColor;
-    
 
+    [SerializeField] private TextMeshProUGUI totalPoints;
     [SerializeField] private List<Image> listOfButtons;
     [SerializeField] private TextMeshProUGUI textMesh;
 
@@ -55,6 +55,14 @@ public class SelectMenuTheme : MonoBehaviour {
             button.color = colorToBeUsed;
         }
 
-	}
+        UpdateTotalPoints();
+    }
+
+    void UpdateTotalPoints() {
+
+        totalPoints.text = "Pins Collected: " +
+            SaveLoadHelper.currentGameData.GetWorldPoints(universe.selectedWorld.worldType) + 
+            " / 100";
+    }
 	
 }

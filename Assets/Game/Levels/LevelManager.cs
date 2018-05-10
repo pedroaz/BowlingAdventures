@@ -8,8 +8,14 @@ public class LevelManager : ScriptableObject {
     [SerializeField] private Level selectedLevel;
     [SerializeField] private Level defaultLevel;
     [SerializeField] private bool playerIsAlive;
-    //[SerializeField] private int currentPoints;
-    //[SerializeField] private int maxPoints;
+
+    public int currentPoints;
+    public int maxPoints;
+
+    public Level SelectedLevel{
+        get { return selectedLevel; }
+        set { selectedLevel = value; }
+    }
 
     /// <summary>
     /// This event is called when the points are changed
@@ -17,8 +23,7 @@ public class LevelManager : ScriptableObject {
     public static event PointsChanged PointsChangedEvent;
     public delegate void PointsChanged();
 
-    public int CurrentPoints{ get; set; }
-    public int MaxPoints{ get; set; }
+    
 
     /// <summary>
     /// Init the level manager variables from the Level object and instantiate
@@ -29,10 +34,10 @@ public class LevelManager : ScriptableObject {
             selectedLevel = defaultLevel;
         }
 
-        CurrentPoints = 0;
+        currentPoints = 0;
         PointsChangedEvent();
         playerIsAlive = true;
-        MaxPoints = selectedLevel.amountOfPinsInLevel;
+        maxPoints = selectedLevel.amountOfPinsInLevel;
         Instantiate(selectedLevel.levelPrefab);
     }
 
@@ -46,20 +51,22 @@ public class LevelManager : ScriptableObject {
         sceneTransitionHelper.LoadEndGame();
     }
 
-    void HasWonLevel() {
+    public bool HasWonLevel() {
 
-        if (true) {
+        if (currentPoints == maxPoints) {
             EndGameManager.won = true;
+            return true;
         }
         else {
             EndGameManager.won = false;
+            return false;
         }
     }
 
     
     public void AddPoints(int x) {
 
-        CurrentPoints += x;
+        currentPoints += x;
         PointsChangedEvent();
     }
 
@@ -86,7 +93,6 @@ public class LevelManager : ScriptableObject {
     public void SelectLevel(int index) {
 
         selectedLevel = universe.selectedWorld.listOfLevels[index];
-        Debug.Log(selectedLevel);
     }
 
 }

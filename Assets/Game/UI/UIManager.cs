@@ -79,9 +79,9 @@ public class UIManager : MonoBehaviour {
 
         pointsText.text = 
             "Points: " +
-            levelManager.CurrentPoints +
+            levelManager.currentPoints +
             " / " + 
-            levelManager.MaxPoints;
+            levelManager.maxPoints;
     }
 
     void UpdateRedText() {

@@ -17,9 +17,7 @@ public class EndPins : MonoBehaviour {
         endDisplayManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<EndDisplayManager>();
     }
 
-    /// <summary>
-    /// When enter the final area end the game
-    /// </summary>
+
     private void OnTriggerEnter(Collider other) {
 
         if (ballLayerMask == (ballLayerMask | (1 << other.gameObject.layer))) {
@@ -27,6 +25,7 @@ public class EndPins : MonoBehaviour {
             endDisplayManager.EndDisplay();
             levelManager.AddPoints(10);
             ExplodePins();
+            SaveGame();
         }
     }
 
@@ -48,5 +47,10 @@ public class EndPins : MonoBehaviour {
                 Random.Range(-1.0f, 1.0f) * explosionVelocity
             );
         }
+    }
+
+    void SaveGame() {
+
+        SaveLoadHelper.currentGameData.UpdateGameData(levelManager);
     }
 }
