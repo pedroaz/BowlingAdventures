@@ -8,9 +8,14 @@ public class LevelManager : ScriptableObject {
     [SerializeField] private Level selectedLevel;
     [SerializeField] private Level defaultLevel;
     [SerializeField] private bool playerIsAlive;
-    [SerializeField] private int currentPoints;
-    [SerializeField] private int maxPoints;
+    //[SerializeField] private int currentPoints;
+    //[SerializeField] private int maxPoints;
 
+    /// <summary>
+    /// This event is called when the points are changed
+    /// </summary>
+    public static event PointsChanged PointsChangedEvent;
+    public delegate void PointsChanged();
 
     public int CurrentPoints{ get; set; }
     public int MaxPoints{ get; set; }
@@ -24,10 +29,11 @@ public class LevelManager : ScriptableObject {
             selectedLevel = defaultLevel;
         }
 
-        currentPoints = 0;
+        CurrentPoints = 0;
+        PointsChangedEvent();
         playerIsAlive = true;
         //maxPoints = selectedLevel.Maxpoints;
-        Instantiate(selectedLevel.levelPrefab);
+        //Instantiate(selectedLevel.levelPrefab);
     }
 
 
@@ -40,9 +46,6 @@ public class LevelManager : ScriptableObject {
         sceneTransitionHelper.LoadEndGame();
     }
 
-    /// <summary>
-    /// Decide if the player has won the level
-    /// </summary>
     void HasWonLevel() {
 
         if (true) {
@@ -53,13 +56,11 @@ public class LevelManager : ScriptableObject {
         }
     }
 
-    /// <summary>
-    /// Add points to the level current points
-    /// </summary>
-    /// <param name="x">Amount</param>
+    
     public void AddPoints(int x) {
 
-        currentPoints += x;
+        CurrentPoints += x;
+        PointsChangedEvent();
     }
 
     /// <summary>

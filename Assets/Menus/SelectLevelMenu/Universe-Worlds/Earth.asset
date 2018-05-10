@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b880b01eb8030418c4d61579908081, type: 3}
+  m_Name: Earth
+  m_EditorClassIdentifier: 
+  worldName: Earth
+  listOfLevels:
+  - {fileID: 11400000, guid: 74e5d1c3237b5c64a99c140484beb1e0, type: 2}
+  - {fileID: 11400000, guid: a563c15bd1f6f2748abfd248004a0da6, type: 2}
+  - {fileID: 11400000, guid: 0239e62d19081dd448beac4cd0e4c1ce, type: 2}
+  - {fileID: 11400000, guid: a306bb647c7700148bf05d4dd027d149, type: 2}
+  - {fileID: 11400000, guid: 993818c6a5ae5954cb35455366b58d66, type: 2}
+  - {fileID: 11400000, guid: 5d0beabd789d35149b3cffffe00c9721, type: 2}
+  - {fileID: 11400000, guid: deaa33ff8d566d04390824a2312c0940, type: 2}
+  - {fileID: 11400000, guid: ab6850ffbe8c02f4bb6c053ad6ea06cd, type: 2}
+  - {fileID: 11400000, guid: 323d4eaab972c1e4bb53cc23295b6b9c, type: 2}
+  - {fileID: 11400000, guid: 32366fe68f5c0324f9c6fa7e8597679c, type: 2}

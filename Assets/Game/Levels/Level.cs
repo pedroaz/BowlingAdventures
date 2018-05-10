@@ -7,6 +7,7 @@ public class Level : ScriptableObject {
 
     // Needs to be public
     public GameObject levelPrefab;
+    public int amountOfPinsInLevel;
 
     [SerializeField] LevelManager levelManager;
 

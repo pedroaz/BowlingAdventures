@@ -23,25 +23,25 @@ public class UIManager : MonoBehaviour {
 
 
         BallFowardMovement.ThrowEvent += ShowPowersUI;
-        ExtraPin.PickUpExtraPinEvent += UpdatePointsText;
+        LevelManager.PointsChangedEvent += UpdatePointsText;
         RedCrystal.PickUpRedCrystalEvent += UpdateRedText;
         PurpleCrystal.PickUpPurpleCrystalEvent += UpdatePurpleSlider;
         SlowTime.SlowEvent += UpdateRedSlider;
         Ghost.GhostEvent += UpdateRedSlider;
-        PowersStats.PowerAmountChangedEvent += UpdateAllUI;
+        PowersStats.PowerAmountChangedEvent += UpdateSliders;
 
-        UpdateAllUI();
+        UpdateSliders();
     }
 
     private void OnDestroy() {
 
-        ExtraPin.PickUpExtraPinEvent -= UpdatePointsText;
+        LevelManager.PointsChangedEvent -= UpdatePointsText;
         RedCrystal.PickUpRedCrystalEvent -= UpdateRedText;
         PurpleCrystal.PickUpPurpleCrystalEvent -= UpdatePurpleSlider;
         BallFowardMovement.ThrowEvent -= ShowPowersUI;
         SlowTime.SlowEvent -= UpdateRedSlider;
         Ghost.GhostEvent -= UpdateRedSlider;
-        PowersStats.PowerAmountChangedEvent -= UpdateAllUI;
+        PowersStats.PowerAmountChangedEvent -= UpdateSliders;
     }
 
     void ShowPowersUI() {
@@ -58,10 +58,8 @@ public class UIManager : MonoBehaviour {
         redGameObject.SetActive(false);
     }
 
-    void UpdateAllUI() {
+    void UpdateSliders() {
 
-        UpdatePointsText();
-        UpdateRedText();
         UpdatePurpleSlider();
         UpdateRedSlider();
     }

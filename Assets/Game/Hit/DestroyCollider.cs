@@ -2,7 +2,7 @@
 
 public class DestroyCollider : MonoBehaviour {
 
-    // TODO: Change to destroy
+   
 
     [SerializeField] private bool showMenu;
 

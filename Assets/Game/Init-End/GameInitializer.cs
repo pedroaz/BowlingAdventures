@@ -24,8 +24,7 @@ public class GameInitializer : MonoBehaviour {
         powersStats.RedDuration = 0;
         levelManager.RevivePlayer();
         ballStats.grounded = false;
-
-        //levelManager.InitLevel();
+        levelManager.InitLevel();
     }
 
     [ExecuteInEditMode]

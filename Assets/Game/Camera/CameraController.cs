@@ -17,10 +17,6 @@ public class CameraController : MonoBehaviour {
     [SerializeField] private GameObject ball;
 
 
-    private void Awake() {
-
-        Screen.orientation = ScreenOrientation.Portrait;
-    }
 
     private void LateUpdate() {
 
