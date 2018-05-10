@@ -11,8 +11,4 @@ public class Level : ScriptableObject {
 
     [SerializeField] LevelManager levelManager;
 
-    public void SelectThisLevel() {
-
-        levelManager.SelectLevel(this);
-    }
 }

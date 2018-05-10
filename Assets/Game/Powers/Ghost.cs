@@ -39,7 +39,6 @@ public class Ghost : MonoBehaviour {
 
                 ChangeToGhostLayer(true);
 
-
                 StartCoroutine(Duration());
             }
         }

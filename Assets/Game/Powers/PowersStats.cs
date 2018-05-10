@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PowerStats")]
 public class PowersStats : ScriptableObject {
 
-   [SerializeField] private float startingPurplePower;
-   [SerializeField] private float currentPurplePower;
-   [SerializeField] private float redDuration;
+   private float currentPurplePower;
+   private int currentRedPower;
+   private float redDuration;
 
     /// <summary>
     /// Purple Power varies between 0 and 1
@@ -21,8 +21,7 @@ public class PowersStats : ScriptableObject {
 
         set {
 
-            currentPurplePower = value;
-            Mathf.Clamp01(CurrentPurplePower);
+            currentPurplePower = Mathf.Clamp01(value);
         }
     }
 
@@ -31,7 +30,7 @@ public class PowersStats : ScriptableObject {
     /// </summary>
     public int CurrentRedPower {
 
-        get {
+        get{
 
             return currentRedPower;
         }
@@ -39,7 +38,6 @@ public class PowersStats : ScriptableObject {
         set {
 
             currentRedPower = value;
-            Mathf.Clamp01(currentRedPower);
         }
     }
 
@@ -54,32 +52,16 @@ public class PowersStats : ScriptableObject {
 
         set {
 
-            redDuration = value;
-            Mathf.Clamp01(redDuration);
+            redDuration = Mathf.Clamp01(value);
         }
     }
 
-    [SerializeField]
-    private int 
-        startingRedPower,
-        currentRedPower;
+  
+    public static event PurpleAmountChangedDelegate PurpleAmountChangedEvent;
+    public delegate void PurpleAmountChangedDelegate();
 
-    /// <summary>
-    /// Event is called when some power amount (red or puple is changed)
-    /// Used for example on the UI
-    /// </summary>
-    public static event PowerAmountWasChanged PowerAmountChangedEvent;
-    public delegate void PowerAmountWasChanged();
-
-    /// <summary>
-    /// To be called when the game is reseted. 
-    /// Resets power values to inital values
-    /// </summary>
-    public void ResetPowerStats() {
-
-        currentPurplePower = startingPurplePower;
-        currentRedPower = startingRedPower;
-    }
+    public static event RedAmountChangedDelegate RedAmountChangedEvent;
+    public delegate void RedAmountChangedDelegate();
 
     /// <summary>
     /// Change red power amount
@@ -87,7 +69,7 @@ public class PowersStats : ScriptableObject {
     public void ChangeRedPowerAmount(int value) {
 
         CurrentRedPower += value;
-        PowerAmountChangedEvent(); 
+        RedAmountChangedEvent(); 
     }
 
 
@@ -97,7 +79,7 @@ public class PowersStats : ScriptableObject {
     public void ChangePurplePowerAmount(float value) {
 
         CurrentPurplePower += value;
-        PowerAmountChangedEvent();
+        PurpleAmountChangedEvent();
     }
 
     public bool HasPurplePower() {

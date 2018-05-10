@@ -719,10 +719,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   percentageToGain: 0.1
-  powersStats: {fileID: 0}
+  powersStats: {fileID: 11400000, guid: 5aca379317e988d4daa51835be761ee9, type: 2}
   ballLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
 --- !u!114 &114927788372399808
 MonoBehaviour:
   m_ObjectHideFlags: 1

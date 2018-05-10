@@ -16,8 +16,14 @@ public class GameInitializer : MonoBehaviour {
 
     [SerializeField] private BallStats ballStats;
 
-	// Use this for initialization
-	void Start () {
+    /// <summary>
+    /// Event is called when the game is initialized
+    /// </summary>
+    public static event GameInitializedDelegate GameInitEvent;
+    public delegate void GameInitializedDelegate();
+
+    // Use this for initialization
+    void Start () {
 
         powersStats.CurrentPurplePower = startingPurplePower;
         powersStats.CurrentRedPower = startingRedPower;
@@ -25,6 +31,7 @@ public class GameInitializer : MonoBehaviour {
         levelManager.RevivePlayer();
         ballStats.grounded = false;
         levelManager.InitLevel();
+        GameInitEvent();
     }
 
     [ExecuteInEditMode]
@@ -33,8 +40,4 @@ public class GameInitializer : MonoBehaviour {
         startingRedPower = Mathf.Clamp(startingRedPower, 0, 10);
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

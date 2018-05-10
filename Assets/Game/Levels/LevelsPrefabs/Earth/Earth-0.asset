@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55852ff3d6a5db43be73a971e0fe5f6, type: 3}
   m_Name: Earth-0
   m_EditorClassIdentifier: 
-  levelPrefab: {fileID: 1771173765190766, guid: e356fe26c8efa5640bd1aac1395c4c8f,
+  levelPrefab: {fileID: 1569718239348796, guid: 9e37996baf2187148883690ca9f898e3,
     type: 2}
+  amountOfPinsInLevel: 10
   levelManager: {fileID: 11400000, guid: 034d9af02f053b44986f8b8e0831d6d8, type: 2}

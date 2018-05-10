@@ -4,7 +4,7 @@
 public class LevelManager : ScriptableObject {
 
     [SerializeField] private SceneTransitionHelper sceneTransitionHelper;
-
+    [SerializeField] private Universe universe;
     [SerializeField] private Level selectedLevel;
     [SerializeField] private Level defaultLevel;
     [SerializeField] private bool playerIsAlive;
@@ -32,8 +32,8 @@ public class LevelManager : ScriptableObject {
         CurrentPoints = 0;
         PointsChangedEvent();
         playerIsAlive = true;
-        //maxPoints = selectedLevel.Maxpoints;
-        //Instantiate(selectedLevel.levelPrefab);
+        MaxPoints = selectedLevel.amountOfPinsInLevel;
+        Instantiate(selectedLevel.levelPrefab);
     }
 
 
@@ -83,9 +83,10 @@ public class LevelManager : ScriptableObject {
         return playerIsAlive;
     }
 
-    public void SelectLevel(Level level) {
+    public void SelectLevel(int index) {
 
-        selectedLevel = level;
+        selectedLevel = universe.selectedWorld.listOfLevels[index];
+        Debug.Log(selectedLevel);
     }
 
 }
