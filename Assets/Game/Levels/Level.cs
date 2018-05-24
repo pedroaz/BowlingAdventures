@@ -9,9 +9,5 @@ public class Level : ScriptableObject {
     public GameObject levelPrefab;
     public int amountOfPinsInLevel;
     public int levelIndex;
-    public World.WORLD_TYPE worldType;
-    
-
-    [SerializeField] LevelManager levelManager;
 
 }

@@ -5,17 +5,13 @@ public class LevelManager : ScriptableObject {
 
     [SerializeField] private SceneTransitionHelper sceneTransitionHelper;
     [SerializeField] private Universe universe;
-    [SerializeField] private Level selectedLevel;
+    public Level selectedLevel;
     [SerializeField] private Level defaultLevel;
     [SerializeField] private bool playerIsAlive;
 
     public int currentPoints;
     public int maxPoints;
 
-    public Level SelectedLevel{
-        get { return selectedLevel; }
-        set { selectedLevel = value; }
-    }
 
     /// <summary>
     /// This event is called when the points are changed
@@ -88,11 +84,6 @@ public class LevelManager : ScriptableObject {
     public bool PlayerIsAlive() {
 
         return playerIsAlive;
-    }
-
-    public void SelectLevel(int index) {
-
-        selectedLevel = universe.selectedWorld.listOfLevels[index];
     }
 
 }

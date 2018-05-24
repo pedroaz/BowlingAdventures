@@ -14,11 +14,6 @@ public class SceneTransitionHelper : ScriptableObject {
         SceneManager.LoadScene("Game");
     }
 
-    public void WorldSelectMenu() {
-
-        SceneManager.LoadScene("SelectWorldMenu");
-    }
-
     public void LevelSelectMenu() {
 
         SceneManager.LoadScene("SelectLevelMenu");

@@ -51,6 +51,6 @@ public class EndPins : MonoBehaviour {
 
     void SaveGame() {
 
-        SaveLoadHelper.currentGameData.UpdateGameData(levelManager);
+        //SaveLoadHelper.currentGameData.UpdateGameData(levelManager);
     }
 }

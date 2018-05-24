@@ -5,12 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Universe")]
 public class Universe : ScriptableObject {
 
-    public List<World> listOfWorlds;
+    public List<Level> listOfPlanets;
+    LevelManager levelManager;
 
-    public World selectedWorld;
+    public bool[] planetsPermission;
 
     public void SelectWorld(int i) {
 
-        selectedWorld = listOfWorlds[i];
+        if (planetsPermission[i]) {
+
+            levelManager.selectedLevel = listOfPlanets[i];
+        }
     }
 }
