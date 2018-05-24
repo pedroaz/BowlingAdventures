@@ -9,12 +9,15 @@
 public class GroundCheck : MonoBehaviour {
 
     [Tooltip("Which layers should be considered ground")]
-    [SerializeField] private LayerMask groundLayerMask;
+    [SerializeField]
+    private LayerMask groundLayerMask;
 
     [Tooltip("Offset of the collider to the ball")]
-    [SerializeField] private Vector3 offset;
+    [SerializeField]
+    private Vector3 offset;
 
-    [SerializeField] private BallStats ballStats;
+    [SerializeField]
+    private BallStats ballStats;
 
     Transform ballTransform;
 
@@ -40,7 +43,7 @@ public class GroundCheck : MonoBehaviour {
 
         if(GeneralFunctionsHelper.CheckLayerCollision(other.gameObject.layer, groundLayerMask)) {
 
-            ballStats.grounded = true;
+            ballStats.grounded = false;
         }
     }
 

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneTransitionHelper: {fileID: 11400000, guid: b557ad84ef347834296408dff5d1c738,
     type: 2}
-  universe: {fileID: 11400000, guid: 1ee1a0ac39161fe4fa1735ddbc38c12b, type: 2}
-  selectedLevel: {fileID: 11400000, guid: bc41746528aaa934887a7a509d1736f4, type: 2}
-  defaultLevel: {fileID: 11400000, guid: bc41746528aaa934887a7a509d1736f4, type: 2}
+  universe: {fileID: 0}
+  selectedLevel: {fileID: 11400000, guid: 74e5d1c3237b5c64a99c140484beb1e0, type: 2}
+  defaultLevel: {fileID: 11400000, guid: 74e5d1c3237b5c64a99c140484beb1e0, type: 2}
   playerIsAlive: 0
+  currentPoints: 10
+  maxPoints: 11

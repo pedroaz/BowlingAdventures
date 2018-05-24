@@ -8,16 +8,20 @@ public class BallStats : ScriptableObject {
 
     
     [Tooltip("Velocity which the ball move sideways")]
-    [SerializeField] private float ballSideVelocity;
+    [SerializeField]
+    private float ballSideVelocity;
 
     [Tooltip("The speed which the ball goes foward")]
-    [SerializeField] private float ballFowardVelocity;
+    [SerializeField]
+    private float ballFowardVelocity;
 
     [Tooltip("The initial foward speed of the ball")]
-    [SerializeField] private float ballInitialFowardSpeed;
+    [SerializeField]
+    private float ballInitialFowardSpeed;
 
     [Tooltip("Jump velocity which is aplied when the ball jump")]
-    [SerializeField] private float ballJumpVelocity;
+    [SerializeField]
+    private float ballJumpVelocity;
 
     [SerializeField]
     public bool

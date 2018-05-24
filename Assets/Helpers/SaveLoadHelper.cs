@@ -7,7 +7,7 @@ using System.IO;
 
 public static class SaveLoadHelper {
 
-      public static GameData currentGameData;
+    public static GameData currentGameData;
 
     public static void NewGame() {
 
@@ -31,7 +31,6 @@ public static class SaveLoadHelper {
         binaryFormatter.Serialize(fileStream, currentGameData);
 
         fileStream.Close();
-
     }
 
     public static void LoadGame() {
@@ -51,44 +50,32 @@ public static class SaveLoadHelper {
 
         return File.Exists(Application.persistentDataPath + "/GameData.gd");
     }
-
-
-
 }
 
 
 [Serializable]
 public class GameData {
 
-    public int GetPlanetsPoints() {
-
-        int totalPoints = 0;
-        
-
-        return totalPoints;
-    }
+    public bool[] planetsPermission;
 
     public GameData() {
-        
+
+        planetsPermission = new bool[10];
+        for (int i = 0; i < 10; i++) {
+
+            if(i == 0) {
+
+                planetsPermission[i] = true;
+            } else {
+
+                planetsPermission[i] = false;
+            }
+        }
     }
 
     public void UpdateGameData(LevelManager levelManager) {
-
-        
 
         SaveLoadHelper.SaveGame();
     }
 }
 
-[Serializable]
-public class LevelData{
-
-    public bool hasWon;
-    public int amountOfPintsCollected;
-
-    public LevelData() {
-
-        hasWon = false;
-        amountOfPintsCollected = 0;
-    }
-}

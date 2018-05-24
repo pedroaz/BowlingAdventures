@@ -14,6 +14,6 @@ MonoBehaviour:
   ballSideVelocity: 10
   ballFowardVelocity: 5
   ballInitialFowardSpeed: 5
-  ballJumpVelocity: 3
+  ballJumpVelocity: 5
   ballIsMoving: 1
   grounded: 1

@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class PersistentDataHelper : MonoBehaviour {
 
+    public bool alwaysNewGame;
+
     private void Awake() {
 
-        //if (!SaveLoadHelper.GameDateExists()) {
+        if (!SaveLoadHelper.GameDateExists()) {
 
-        //    SaveLoadHelper.NewGame();
-        //}
-        //else {
-        //    SaveLoadHelper.LoadGame();
-        //}
+            SaveLoadHelper.NewGame();
+        } else {
+            SaveLoadHelper.LoadGame();
+        }
 
-        //SaveLoadHelper.NewGame();
+        if (alwaysNewGame) {
+
+            SaveLoadHelper.NewGame();
+        }
+
     }
 
 }

@@ -85,6 +85,7 @@
     <Compile Include="Assets\Helpers\SaveLoadHelper.cs" />
     <Compile Include="Assets\Helpers\SceneTransitionHelper.cs" />
     <Compile Include="Assets\Menus\EndGame\EndGameManager.cs" />
+    <Compile Include="Assets\Menus\SelectLevelMenu\PlanetsShaders.cs" />
     <Compile Include="Assets\Menus\SelectLevelMenu\Universe.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Constant.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Enum.cs" />
@@ -152,19 +153,19 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>C:/Users/pedro/Desktop/dev/Games/BowlingAdventures/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Desktop/dev/games/BowlingAdventures/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/pedro/Desktop/dev/Games/BowlingAdventures/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/pedro/Desktop/dev/games/BowlingAdventures/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/pedro/Desktop/dev/Games/BowlingAdventures/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Desktop/dev/games/BowlingAdventures/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/pedro/Desktop/dev/Games/BowlingAdventures/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/pedro/Desktop/dev/games/BowlingAdventures/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/pedro/Desktop/dev/Games/BowlingAdventures/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/pedro/Desktop/dev/games/BowlingAdventures/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

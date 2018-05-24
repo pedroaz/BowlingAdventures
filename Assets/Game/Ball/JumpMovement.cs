@@ -2,9 +2,11 @@
 
 public class JumpMovement : MonoBehaviour {
 
-    [SerializeField] private BallStats ballStats;
+    [SerializeField]
+    private BallStats ballStats;
 
-    [SerializeField] private LevelManager levelManager;
+    [SerializeField]
+    private LevelManager levelManager;
 
     Rigidbody rigid;
 

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Name: Universe
   m_EditorClassIdentifier: 
   listOfPlanets:
+  - {fileID: 11400000, guid: 74e5d1c3237b5c64a99c140484beb1e0, type: 2}
+  - {fileID: 11400000, guid: bc41746528aaa934887a7a509d1736f4, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -20,5 +22,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  levelManager: {fileID: 11400000, guid: 034d9af02f053b44986f8b8e0831d6d8, type: 2}
