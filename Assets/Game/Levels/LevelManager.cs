@@ -49,8 +49,6 @@ public class LevelManager : ScriptableObject {
 
     public bool HasWonLevel() {
 
-        Debug.Log(currentPoints);
-        Debug.Log(maxPoints);
 
         if (currentPoints == maxPoints) {
             EndGameManager.won = true;

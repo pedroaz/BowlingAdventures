@@ -475,6 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7d49a5758bc214c928b19c28844424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 11400000, guid: 034d9af02f053b44986f8b8e0831d6d8, type: 2}
   textMeshPro: {fileID: 992777300}
   retryButton: {fileID: 1164290404}
 --- !u!4 &626320103

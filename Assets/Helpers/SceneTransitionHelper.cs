@@ -21,6 +21,7 @@ public class SceneTransitionHelper : ScriptableObject {
 
     public void LoadEndGame() {
 
+        
         SceneManager.LoadScene("EndGameS");
     }
 

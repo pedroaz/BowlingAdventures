@@ -8,6 +8,8 @@ public class EndGameManager : MonoBehaviour {
 
     public static bool won;
 
+    public LevelManager levelManager;
+
     [SerializeField]
     TextMeshProUGUI textMeshPro;
 
@@ -16,6 +18,7 @@ public class EndGameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        SaveLoadHelper.SaveGame();
 
         if (won) {
 
@@ -29,6 +32,11 @@ public class EndGameManager : MonoBehaviour {
     void Won() {
 
         textMeshPro.text = "Congratulations, you have collected all the pins!";
+
+        if(levelManager.selectedLevel.levelIndex != 9) {
+
+            SaveLoadHelper.currentGameData.planetsPermission[levelManager.selectedLevel.levelIndex + 1] = true;
+        }
     }
 
     void Lose() {

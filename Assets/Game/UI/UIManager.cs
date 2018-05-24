@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour {
     void UpdatePointsText() {
 
         pointsText.text = 
-            "Points: " +
+            "Pins: " +
             levelManager.currentPoints +
             " / " + 
             levelManager.maxPoints;

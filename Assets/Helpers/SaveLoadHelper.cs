@@ -72,10 +72,5 @@ public class GameData {
             }
         }
     }
-
-    public void UpdateGameData(LevelManager levelManager) {
-
-        SaveLoadHelper.SaveGame();
-    }
 }
 
