@@ -2,21 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EndGameManager : MonoBehaviour {
 
-    public Text resultText;
     public static bool won;
+
+    [SerializeField]
+    TextMeshProUGUI textMeshPro;
+
+    public GameObject retryButton;
 
 	// Use this for initialization
 	void Start () {
 
+
         if (won) {
-            resultText.text = "Congratulations!";
+
+            Won();
+        } else {
+
+            Lose();
         }
-        else {
-            resultText.text = "Try Again";
-        }
-	}
-	
+    }
+
+    void Won() {
+
+        textMeshPro.text = "Congratulations, you have collected all the pins!";
+    }
+
+    void Lose() {
+
+        textMeshPro.text = "I am sorry, but you need to colled all the pins.";
+        retryButton.SetActive(true);
+    }
+
 }

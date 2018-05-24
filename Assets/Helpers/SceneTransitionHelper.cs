@@ -6,22 +6,22 @@ public class SceneTransitionHelper : ScriptableObject {
 
     public void LoadMainMenu() {
 
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenuScene");
     }
 
     public void LoadGameLevel() {
 
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void LevelSelectMenu() {
 
-        SceneManager.LoadScene("SelectLevelMenu");
+        SceneManager.LoadScene("SelectLevelMenuScene");
     }
 
     public void LoadEndGame() {
 
-        SceneManager.LoadScene("EndGame");
+        SceneManager.LoadScene("EndGameS");
     }
 
     public void ReloadScene() {
