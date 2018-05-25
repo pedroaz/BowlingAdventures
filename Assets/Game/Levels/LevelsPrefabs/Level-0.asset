@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55852ff3d6a5db43be73a971e0fe5f6, type: 3}
   m_Name: Level-0
   m_EditorClassIdentifier: 
-  levelPrefab: {fileID: 1569718239348796, guid: 9e37996baf2187148883690ca9f898e3,
+  levelPrefab: {fileID: 1432159926398406, guid: 62da5cd30b07de948b17b251ee438068,
     type: 2}
   amountOfPinsInLevel: 11
+  levelIndex: 0

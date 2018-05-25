@@ -1,12 +1,11 @@
 Android
 PlayerPath?
-C:/Users/pedro/Desktop/dev/Games/BowlingAdventures/Builds/TestBuild.apk
+C:/Users/pedro/Desktop/dev/games/BowlingAdventures/Builds/BowlingJamTestBuild.apk
 SceneListBegin?
-Assets/Menus/MainMenu/MainMenu.unity
-Assets/Menus/SelectLevelMenu/SelectWorldMenu.unity
-Assets/Menus/SelectLevelMenu/SelectLevelMenu.unity
-Assets/Game/Game.unity
-Assets/Menus/EndGame/EndGame.unity
+Assets/Menus/MainMenu/MainMenuScene.unity
+Assets/Menus/SelectLevelMenu/SelectLevelMenuScene.unity
+Assets/Game/GameScene.unity
+Assets/Menus/EndGame/EndGameS.unity
 SceneListEnd?
 a63cbd3bced340a6aa256873778d6c25 Assembly-CSharp.dll:.BallSideMovement
 7b8e7866f51a0817662577a68d076786 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -24,7 +23,6 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 30afa8783a8bbee2e465ec9ce1efaee2 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 30afa8783a8bbee2e465ec9ce1efaee2 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 607d64d2c4bc76ac9876e6f7b9cc7edf UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-5e0bbadd17a5b379be199f886518f0fc Assembly-CSharp.dll:.World
 00c57fb7b7e42497f48ae5a210d49031 Assembly-CSharp.dll:.BallFowardMovement
 4e15dcc3534dc36a76ac419785cf197a Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
 22bb40270d2bfc0d0884e2aefd3d1c60 Unity.TextMeshPro.dll:TMPro.TMP_Text
@@ -99,7 +97,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-50b91345d080ceae2dbab52a47487e8d Assembly-CSharp.dll:.Universe
+4bf5ad049a98b8783b6bf5bdec4ac7cb Assembly-CSharp.dll:.Universe
 5ed33b08f29de74ffe815d36fb489ffa Assembly-CSharp.dll:.SlowTime
 8b319a99008681bf26bd911bcf4a2ef1 Assembly-CSharp.dll:.LevelManager
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -179,7 +177,7 @@ a924c90a95cf65003f662aa5e30abb6b Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 01e6f145049f3a676df6dc247eabf176 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-3b0e0e0853fca99269ad990f3387ab62 Assembly-CSharp.dll:.EndGameManager
+28d7793feae7559324fb5eedb1c5b378 Assembly-CSharp.dll:.EndGameManager
 bc79872c81f3cda9be1ec427f70f92aa Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 0561521e336e270e6e5a9c61387cb838 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
 bc79872c81f3cda9be1ec427f70f92aa Vuforia.UnityExtensions.dll:Vuforia.AnchorStageBehaviour
@@ -221,6 +219,7 @@ a924c90a95cf65003f662aa5e30abb6b Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:ProGrids.pg_IgnoreSnap
 65d2591eb0893375ac0a47ceb81c0b4a Assembly-CSharp.dll:.EndPins
 f4bd1aee67eeef7953cce6c44588b3d7 Unity.TextMeshPro.dll:TMPro.TextContainer
+87e56c7fcef879bf6a03287dfd36e992 Assembly-CSharp.dll:.PersistentDataHelper
 1cd4893b18ef6c9e1612214d23ea08a3 Assembly-CSharp.dll:.ChatController
 29273f491d11f6bdd02a43a9d8df84c7 Assembly-CSharp.dll:TMPro.Examples.TMP_ExampleScript_01
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -290,6 +289,7 @@ f0f0ab6b8a39d0572cfa4ea315d84fbf Assembly-CSharp.dll:TMPro.Examples.Benchmark04
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexShakeB
 d56a8d181fd2abc606f122a546a69d74 Assembly-CSharp.dll:.JumpMovement
 dad1c1272dfe1898bb613dcb2631bcce Assembly-CSharp.dll:TMPro.Examples.Benchmark02
+d35c2de2daaefd605b07fd939c0dcc24 Assembly-CSharp.dll:.PlanetsShaders
 76015de5fcb247eeb8df66c001d5a22d Assembly-CSharp.dll:TMPro.Examples.TMP_UiFrameRateCounter
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.VertexColorCycler
 d7ff19d9f8c0114de608968aea1f5902 Assembly-CSharp.dll:.EndDisplayManager
@@ -369,6 +369,4 @@ a924c90a95cf65003f662aa5e30abb6b Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 01e6f145049f3a676df6dc247eabf176 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-c48f8582293ff2d80dc8c65de203e585 Assembly-CSharp.dll:.Level
-d79e6afaa12cfa13bf32a3d70536d1a8 Assembly-CSharp.dll:.SelectMenuTheme
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PersistentDataHelper
+178742b81e29fd2da617fe662c29d8c5 Assembly-CSharp.dll:.Level

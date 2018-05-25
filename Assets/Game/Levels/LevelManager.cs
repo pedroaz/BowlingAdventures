@@ -26,6 +26,8 @@ public class LevelManager : ScriptableObject {
     /// </summary>
     public void InitLevel() {
 
+        Debug.Log("level inited");
+
         if (selectedLevel == null) {
             selectedLevel = defaultLevel;
         }
@@ -49,8 +51,10 @@ public class LevelManager : ScriptableObject {
 
     public bool HasWonLevel() {
 
+        Debug.Log(currentPoints);
+        Debug.Log(maxPoints);
 
-        if (currentPoints == maxPoints) {
+        if (currentPoints >= maxPoints) {
             EndGameManager.won = true;
             return true;
         }

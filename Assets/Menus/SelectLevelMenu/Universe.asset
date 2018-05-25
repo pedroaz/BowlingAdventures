@@ -11,15 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583a9162c2eb44b4ea57762bd0d9e4d6, type: 3}
   m_Name: Universe
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 11400000, guid: 034d9af02f053b44986f8b8e0831d6d8, type: 2}
   listOfPlanets:
   - {fileID: 11400000, guid: 74e5d1c3237b5c64a99c140484beb1e0, type: 2}
-  - {fileID: 11400000, guid: bc41746528aaa934887a7a509d1736f4, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  levelManager: {fileID: 11400000, guid: 034d9af02f053b44986f8b8e0831d6d8, type: 2}
+  - {fileID: 11400000, guid: 903846ea5b6d2bb479ead33355d32319, type: 2}
+  - {fileID: 11400000, guid: e0dfa156a33513e4db843446e5881693, type: 2}
+  - {fileID: 11400000, guid: d8a5b94edc1d87846a7126b40e509454, type: 2}
+  - {fileID: 11400000, guid: e029fae852d7c0947837b731d1fa38b6, type: 2}
+  - {fileID: 11400000, guid: 27d8fc9df0691e7448eb81193f41fb2e, type: 2}
+  - {fileID: 11400000, guid: c38247f8d8a83dd4e80c5c9f2dd63975, type: 2}
+  - {fileID: 11400000, guid: 8411323a202f8c54090510f0a63f9cb6, type: 2}
+  - {fileID: 11400000, guid: cc85943dec5c6d2498e7bd3fc7cf84c8, type: 2}
+  - {fileID: 11400000, guid: 547f79b6d8c566e4e89f6caa97befe66, type: 2}

@@ -8,16 +8,17 @@ public class PersistentDataHelper : MonoBehaviour {
 
     private void Awake() {
 
-        if (!SaveLoadHelper.GameDateExists()) {
-
-            SaveLoadHelper.NewGame();
-        } else {
-            SaveLoadHelper.LoadGame();
-        }
-
         if (alwaysNewGame) {
 
             SaveLoadHelper.NewGame();
+        } else {
+
+            if (!SaveLoadHelper.GameDateExists()) {
+
+                SaveLoadHelper.NewGame();
+            } else {
+                SaveLoadHelper.LoadGame();
+            }
         }
 
     }

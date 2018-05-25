@@ -11,6 +11,8 @@ public static class SaveLoadHelper {
 
     public static void NewGame() {
 
+        Debug.Log("new game");
+
         GameData gameData = new GameData();
 
         currentGameData = gameData;
