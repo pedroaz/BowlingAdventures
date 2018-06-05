@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class EndGameManager : MonoBehaviour {
 
@@ -10,8 +9,12 @@ public class EndGameManager : MonoBehaviour {
 
     public LevelManager levelManager;
 
+
     [SerializeField]
-    TextMeshProUGUI textMeshPro;
+    private Image loser;
+
+    [SerializeField]
+    private Image winner;
 
     public GameObject retryButton;
 
@@ -31,9 +34,10 @@ public class EndGameManager : MonoBehaviour {
 
     void Won() {
 
-        textMeshPro.text = "Congratulations, you have collected all the pins!";
+        loser.gameObject.SetActive(false);
+        winner.gameObject.SetActive(true);
 
-        if(levelManager.selectedLevel.levelIndex != 9) {
+        if (levelManager.selectedLevel.levelIndex != 9) {
 
             SaveLoadHelper.currentGameData.planetsPermission[levelManager.selectedLevel.levelIndex + 1] = true;
         }
@@ -41,7 +45,10 @@ public class EndGameManager : MonoBehaviour {
 
     void Lose() {
 
-        textMeshPro.text = "I am sorry, but you need to colled all the pins.";
+
+        loser.gameObject.SetActive(true);
+        winner.gameObject.SetActive(false);
+
         retryButton.SetActive(true);
     }
 

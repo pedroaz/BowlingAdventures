@@ -24,7 +24,7 @@ public class PlanetsShaders : MonoBehaviour {
 		
 	}
 
-    void UpdateShaders() {
+    public void UpdateShaders() {
 
         bool[] permissions;
 
