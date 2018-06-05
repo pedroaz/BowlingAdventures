@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   offset: {x: 0, y: -0.18, z: 0}
   ballStats: {fileID: 11400000, guid: 69f7d45a9d9a1f74cbf2a0d49d54fa15, type: 2}
 --- !u!114 &114760509460887092

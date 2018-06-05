@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelPrefab: {fileID: 1432159926398406, guid: 45941e4864fd95e49bfc8b3a49de4d2f,
     type: 2}
-  amountOfPinsInLevel: 20
+  amountOfPinsInLevel: 16
   levelIndex: 6
